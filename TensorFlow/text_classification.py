@@ -123,5 +123,3 @@ with open("test.txt", encoding="utf-8",) as f:
 # print("prediction: " + str(predict[0]))
 # print("actual: " + str(test_labels[0]))
 print(results)
-
-
