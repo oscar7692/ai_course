@@ -4,6 +4,7 @@ import tensorflow as tf
 from tensorflow import keras
 
 
+# source https://www.youtube.com/watch?v=6g4O5UOH304
 # Just disables  AVX/FMA warning
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 

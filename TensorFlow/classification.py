@@ -7,6 +7,14 @@ from sklearn.model_selection import train_test_split
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 
+"""
+aprendizaje supervisado (clasificacion):
+partiendo de una lista de hombres y mujeres con sus caracteristicas de altura y
+peso, crearemos un algortimo para averiguar el sexo de una nueva persona en
+funcion de sus datos de altura y peso
+"""
+
+
 ingresos = pd.read_csv("ingresos.csv")
 # return an array
 ingresos["income"].unique()
@@ -30,7 +38,7 @@ datos_y = ingresos["income"]
 # savin 30% for each one
 x_train, x_test, y_train, y_test = train_test_split(datos_x, 
                                                     datos_y, 
-                                                    test_size=0.3)
+                                                    test_size=0.8)
 # print("\n", x_test.head())
 
 # create variables to store caracteristics values in function if those are
