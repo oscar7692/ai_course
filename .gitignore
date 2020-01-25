@@ -34,6 +34,7 @@ MANIFEST
 *.gz
 *.h5
 *.manifest
+my_image.png
 *.spec
 *.txt
 MNIST/
