@@ -70,3 +70,20 @@ with tf.Session() as sesion:
             print(iteracion, "\t Error: ", error)
         # saves current tensorflow session 
         saver.save(sesion, "./modelo_series_temporales")
+
+# prediction creation
+with tf.Session() as sesion:
+    saver.restore(sesion, "./series_temporales")
+    entrenamiento_seed = list(entrenamiento_normalizado[-18:])
+    # generate test lotes
+    for iteracion in range(18):
+        lote_x = np.array(entrenamiento_seed[-numero_pasos:]).reshape(1, numero_pasos, 1)
+        prediccion_y = sesion.run(salidas, feed_dict={x:lote_x})
+        entrenamiento_seed.append(prediccion_y[0,-1,0])
+
+resultados = normalizacion.inverse_transform(np.array(entrenamiento_seed[18:]).reshape(18,1))
+
+# add new column called Predctions that cointan resultados values
+conjunto_pruebas["Predictions"] = resultados
+
+conjunto_pruebas.plot()
