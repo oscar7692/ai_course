@@ -56,7 +56,7 @@ funcion_error = tf.reduce_mean(tf.square(salidas - y))
 optimizador = tf.train.AdamOptimizer(learnin_rate=tasa_aprendizaje)
 entrenamiento = optimizador.minimize(funcion_error)
 
-inint = tf.global_variables_initializer()
+init = tf.global_variables_initializer()
 saver = tf.train.Saver()
 
 # x and y lotes creation using tensorflow session

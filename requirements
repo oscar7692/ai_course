@@ -1,0 +1,8 @@
+matplotlib
+opencv-python
+opencv-contrib-python
+pandas
+protobuf==3.8.0
+sklearn
+tensorflow==2.0
+#######https://storage.googleapis.com/tensorflow/windows/cpu/tensorflow_cpu-2.1.0-cp36-cp36m-win_amd64.whl
