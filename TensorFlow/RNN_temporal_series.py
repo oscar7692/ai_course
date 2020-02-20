@@ -46,7 +46,7 @@ y = tf.placeholder(tf.float32, [None, numero_pasos, numero_salidas])
 # creating neural layer
 capa = tf.contrib.rnn.OutputProjectionWrapper(
     tf.contrib.rnn.BasicLSTMCe11(num_units=numero_neuronas,
-                                 activation=tf.nn.relu), 
+                                 activation=tf.nn.relu),
     output_size=numero_salidas)
 
 salidas, estados = tf.nn.dynamic_rnn(capa, x, dtype=tf.float32)
